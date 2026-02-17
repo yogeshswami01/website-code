@@ -52,15 +52,6 @@ section h2 { margin-bottom: 1rem; color: #004aad; }
 
 /* Dashboard */
 #dashboard { background: #eef6ff; padding: 3rem 2rem; border-top: 2px solid #004aad; }
-.progress-bar {
-  width: 90%; max-width: 500px; height: 30px; background: #ccc; border-radius: 15px;
-  margin: auto; position: relative;
-}
-.progress-fill {
-  height: 100%; width: 70%; background: #004aad; color: #fff;
-  text-align: center; line-height: 30px; border-radius: 15px;
-  transition: width 1s ease-in-out;
-}
 .opportunities ul { list-style: none; padding: 0; }
 .opportunities li {
   background: #fff; margin: 0.5rem auto; padding: 1rem;

@@ -2,16 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // Dashboard Progress Update
   // -------------------------
-  const progressFill = document.getElementById("progressFill");
-  if (progressFill) {
-    let progress = 70;
-
-    setInterval(() => {
-      progress = (progress + 5) % 100; // cycle progress
-      progressFill.style.width = progress + "%";
-      progressFill.textContent = progress + "%";
-    }, 3000);
-  }
 
   // -------------------------
   // Opportunities Feed
