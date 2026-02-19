@@ -7,6 +7,28 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="authModal" class="modal">
+  <div class="modal-content">
+    <h2>Welcome</h2>
+    <div id="loginSection">
+      <h3>Login</h3>
+      <input type="text" id="loginName" placeholder="Enter your name">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+    </div>
+
+    <div id="signupSection" style="display:none;">
+      <h3>Sign Up</h3>
+      <input type="text" id="signupName" placeholder="Full Name">
+      <input type="text" id="signupYear" placeholder="Year (e.g. 2nd Year)">
+      <input type="text" id="signupContact" placeholder="Contact No">
+      <input type="text" id="signupCollege" placeholder="College/University">
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+  </div>
+</div>
+
   <!-- Navigation -->
   <nav>
     <div class="logo">Student Growth Tracker</div>

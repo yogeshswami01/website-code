@@ -1,3 +1,57 @@
+function showSignup() {
+  document.getElementById("loginSection").style.display = "none";
+  document.getElementById("signupSection").style.display = "block";
+}
+
+function showLogin() {
+  document.getElementById("signupSection").style.display = "none";
+  document.getElementById("loginSection").style.display = "block";
+}
+
+function signup() {
+  let user = {
+    name: document.getElementById("signupName").value,
+    year: document.getElementById("signupYear").value,
+    contact: document.getElementById("signupContact").value,
+    college: document.getElementById("signupCollege").value
+  };
+
+  localStorage.setItem("userData", JSON.stringify(user));
+  closeModal();
+  personalizeDashboard(user);
+}
+
+function login() {
+  let name = document.getElementById("loginName").value;
+  let user = JSON.parse(localStorage.getItem("userData"));
+
+  if (user && user.name === name) {
+    closeModal();
+    personalizeDashboard(user);
+  } else {
+    alert("User not found. Please sign up.");
+  }
+}
+
+function closeModal() {
+  document.getElementById("authModal").style.display = "none";
+}
+
+function personalizeDashboard(user) {
+  document.getElementById("dashboard").innerHTML = `
+    <h2>Welcome, ${user.name}!</h2>
+    <p>Year: ${user.year}</p>
+    <p>Contact: ${user.contact}</p>
+    <p>College: ${user.college}</p>
+    <h3>Your Personalized Learning Path</h3>
+    <ul>
+      <li>📚 Courses tailored for ${user.year} year students</li>
+      <li>💼 Opportunities near ${user.college}</li>
+      <li>📊 Progress tracking linked to your profile</li>
+    </ul>
+  `;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // -------------------------
   // Dashboard Progress Update
